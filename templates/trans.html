@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{%block title%}
+contact
+{%endblock title%}
+{% block body %}
+<h1>This is to transfer money.</h1>
+{% comment %} <background-img><img src="https://source.unsplash.com/1200x700/?contact" class="d-block w-100" alt="..."></background-img> {% endcomment %}
+{% for i in cx_list %}
+<tr>
+    <td>{{i.firstname }}</td>
+    <td>{{i.lastname }}</td>
+    <td>{{i.email }}</td>
+    <td>{{i.mobile_number }}</td>
+    <td><a href="/trans"><button class="btn btn-primary" type="submit" >transfer</button></a></td>
+</tr>
+{% endfor %}
+{% comment %} <img src="https://source.unsplash.com/1200x700/?contact" class="d-block w-100" alt="..."> {% endcomment %}
+{% endblock body %}

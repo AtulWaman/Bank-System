@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{%block title%}
+allcustomers
+{%endblock title%}
+{% block body %}
+<h1 style="
+background-color: antiquewhite;">List of all Customers is here</h1>
+<div class="list-group">
+    <table border="2px">
+    <td style="background-color: rgb(111, 208, 208);">firstname</td>
+    <td style="background-color: rgb(111, 208, 208);">lastname</td>
+    <td style="background-color: rgb(111, 208, 208);">email</td>
+    <td style="background-color: rgb(111, 208, 208);">mobile_number</td>
+    <td style="background-color: rgb(111, 208, 208);">options</td>
+{% for i in cx_list %}
+<tr>
+    <td>{{i.firstname }}</td>
+    <td>{{i.lastname }}</td>
+    <td>{{i.email }}</td>
+    <td>{{i.mobile_number }}</td>
+    <td><a href="/transfer_money"><button class="btn btn-primary" type="submit" >transfer</button></a></td>
+</tr>
+{% endfor %}
+    </table  class="table table-bordered border-primary">
+    
+    {% comment %} <h1>List of all Customers is here</h1> {% endcomment %}
+    <div class="list-group">
+        <!-- Customer list code here -->
+    </div>
+    
+    <h2>Transfer History:</h2>
+    <table border="2px">
+        <tr>
+            <th>Date</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Amount</th>
+        </tr>
+        {% for transfer in transfers %}
+        <tr>
+            <td>{{ transfer.date }}</td>
+            <td>{{ transfer.sender_firstname }}</td>
+            <td>{{ transfer.sender_lastname }}</td>
+            <td>{{ transfer.amount }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+{% endblock body %} 

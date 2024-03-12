@@ -1,0 +1,13 @@
+{
+    "editor.snippetSuggestions": "inline",
+    "editor.snippets.codeActions.enabled": true,
+    "editor.suggest.showSnippets": true,
+    "editor.suggest.snippetsPreventQuickSuggestions": true,
+    "emmet.showSuggestionsAsSnippets": true,
+    "django.snippets.exclude": [
+        "cms",
+        "wagtail"
+    ],
+    "django.snippets.use": true,
+    "django.i18n": true
+}

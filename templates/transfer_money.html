@@ -1,0 +1,46 @@
+{% comment %} <!-- trans.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Money Transfer</title>
+</head>
+<body>
+    <h1>Transfer Money</h1>
+    <form method="post">
+        {% csrf_token %}
+        </select>
+        <br>
+        <label for="amount">Enter Amount to Transfer:</label>
+        <input type="text" name="amount" id="amount">
+        <br>
+        <button type="submit">Transfer Money</button>
+    </form>
+</body>
+</html>  {% endcomment %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Money Transfer</title>
+</head>
+<body>
+    <h1>Transfer Money</h1>
+    <form method="post">
+        {% csrf_token %}
+        
+        <label for="Customer">Select Customer:</label>
+        <select name="Customer" id="Customer">
+            {% for customer in customers %}
+                <option value="{{ customer.cx_id }}">{{ customer.firstname }} {{ customer.lastname }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="amount">Enter Amount to Transfer:</label>
+        <input type="text" name="amount" id="amount">
+        <br>
+        <button type="button" class="btn btn-success">Transfer Money</button>
+        {% comment %} <button class="btn btn-primary" type="submit">Button</button> {% endcomment %}
+        {% comment %} <button type="submit">Transfer Money</button> {% endcomment %}
+    </form>
+</body>
+</html>
